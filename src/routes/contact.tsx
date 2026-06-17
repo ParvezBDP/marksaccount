@@ -50,7 +50,7 @@ function ContactPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Contact"
-        title={<>Let's talk about your <span className="italic text-accent">books, taxes</span> and growth.</>}
+        title={<>Let's talk about your <span className="text-accent">books, taxes</span> and growth.</>}
         lead="Share a few details and we'll get back within one business day. For urgent matters, WhatsApp is the fastest way to reach us."
       />
 

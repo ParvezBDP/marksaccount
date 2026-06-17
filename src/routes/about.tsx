@@ -27,7 +27,7 @@ function AboutPage() {
     <SiteLayout>
       <PageHero
         eyebrow="About"
-        title={<>A modern accounting firm with <span className="italic text-accent">old-school</span> standards.</>}
+        title={<>A modern accounting firm with <span className="text-accent">old-school</span> standards.</>}
         lead="Marks Accounting & Taxation was founded with one belief — that small and mid-sized businesses deserve the same quality of financial advice that large corporations enjoy."
       />
       <section className="bg-background py-24 md:py-28">

@@ -26,7 +26,7 @@ function PortalPage() {
           <div className="pointer-events-none absolute -top-32 -left-20 h-96 w-96 rounded-full bg-accent/20 blur-3xl" />
           <div className="relative">
             <Link to="/" className="text-xs uppercase tracking-[0.22em] text-background/60">← Back to site</Link>
-            <h1 className="mt-10 font-display text-5xl leading-[1.05]">Your books, your <span className="italic text-accent">filings,</span> always within reach.</h1>
+            <h1 className="mt-10 font-display text-5xl leading-[1.05]">Your books, your <span className="text-accent">filings,</span> always within reach.</h1>
             <p className="mt-6 max-w-md text-background/75">The Marks Client Portal gives you a single, secure home for your financial documents and compliance status.</p>
           </div>
           <ul className="relative space-y-4 text-sm text-background/85">
