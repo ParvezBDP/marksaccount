@@ -45,7 +45,7 @@ function Hero() {
           </div>
           <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl">
             Precision in numbers.<br />
-            <span className="italic text-accent">Confidence</span> in compliance.
+            <span className="text-accent">Confidence</span> in compliance.
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Marks Accounting & Taxation is a full-service consulting firm helping entrepreneurs, SMEs and enterprises stay compliant, optimise tax and grow with clarity.

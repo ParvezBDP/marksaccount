@@ -22,7 +22,7 @@ function ServicesPage() {
     <SiteLayout>
       <PageHero
         eyebrow="Services"
-        title={<>Everything your business needs to stay <span className="italic text-accent">compliant</span> and confident.</>}
+        title={<>Everything your business needs to stay <span className="text-accent">compliant</span> and confident.</>}
         lead="Nine focused service lines covering registrations, monthly compliance, advisory and growth documentation. Pick one — or partner with us across all of them."
       />
       <section className="bg-background py-20 md:py-24">
