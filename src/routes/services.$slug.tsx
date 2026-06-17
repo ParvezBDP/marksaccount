@@ -70,7 +70,7 @@ function ServiceDetail() {
             <div className="text-xs uppercase tracking-[0.22em] text-accent">What's included</div>
             <h2 className="mt-3 font-display text-3xl leading-tight text-foreground md:text-4xl">A clear scope, executed end-to-end.</h2>
             <ul className="mt-8 space-y-4">
-              {service.details.map((d) => (
+              {service.details.map((d: string) => (
                 <li key={d} className="flex gap-4 border-b border-border pb-4">
                   <span className="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent/15 text-accent">
                     <Check className="h-3.5 w-3.5" />
@@ -85,7 +85,7 @@ function ServiceDetail() {
               <div className="rounded-3xl border border-border bg-beige p-7">
                 <div className="text-xs uppercase tracking-[0.18em] text-accent">Deliverables</div>
                 <ul className="mt-4 space-y-3 text-sm text-foreground/90">
-                  {service.deliverables.map((d) => (
+                  {service.deliverables.map((d: string) => (
                     <li key={d} className="flex gap-2"><Check className="mt-0.5 h-4 w-4 text-accent" /><span>{d}</span></li>
                   ))}
                 </ul>
