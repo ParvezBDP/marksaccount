@@ -11,7 +11,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <img src={logoAsset.url} alt="" className="h-11 w-11 rounded-md object-contain" />
             <div>
-              <div className="font-display text-2xl text-background">marks</div>
+              <div className="font-display text-2xl text-background">MARKS</div>
               <div className="text-[10px] uppercase tracking-[0.18em] text-background/60">Accounting & Taxation</div>
             </div>
           </div>

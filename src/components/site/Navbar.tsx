@@ -19,7 +19,7 @@ export function Navbar() {
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <img src={logoAsset.url} alt="Marks Accounting & Taxation" className="h-11 w-11 shrink-0 rounded-md object-contain" />
           <div className="min-w-0 leading-tight">
-            <div className="font-display text-xl tracking-tight text-foreground">marks</div>
+            <div className="font-display text-xl tracking-tight text-foreground">MARKS</div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Accounting & Taxation</div>
           </div>
         </Link>
