@@ -73,7 +73,6 @@ function Hero() {
         </div>
         <div className="relative md:col-span-5">
           <div className="relative mx-auto aspect-square max-w-md rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-luxe)]">
-            <div className="absolute -top-3 -left-3 rounded-full bg-accent px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-accent-foreground">est. brand</div>
             <img src={logoAsset.url} alt="Marks Accounting & Taxation logo" className="h-full w-full object-contain" />
           </div>
           <div className="absolute -bottom-6 -left-2 hidden rounded-2xl border border-border bg-background p-5 shadow-[var(--shadow-card)] md:block">
