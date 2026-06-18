@@ -204,6 +204,7 @@ function QRBlock() {
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white hover:opacity-90">Chat on WhatsApp</a>
             <a href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-muted">Call {CONTACT.phones[0]}</a>
+            <a href={`tel:${CONTACT.phones[1].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-muted">Call {CONTACT.phones[1]}</a>
           </div>
         </div>
         <div className="flex justify-center md:justify-end">
