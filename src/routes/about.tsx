@@ -44,7 +44,7 @@ function AboutPage() {
             <div className="rounded-3xl border border-border bg-beige p-8">
               <div className="text-xs uppercase tracking-[0.22em] text-accent">By the numbers</div>
               <div className="mt-6 grid grid-cols-2 gap-6">
-                {[["500+", "Returns filed"], ["100+", "Active clients"], ["9", "Service lines"], ["100%", "On-time filing"]].map(([n, l]) => (
+                {[["200+", "Returns filed"], ["100+", "Active clients"], ["9", "Service lines"], ["100%", "On-time filing"]].map(([n, l]) => (
                   <div key={l}>
                     <div className="font-display text-4xl text-foreground">{n}</div>
                     <div className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">{l}</div>
