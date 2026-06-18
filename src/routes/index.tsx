@@ -146,8 +146,8 @@ function Approach() {
       <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="text-xs uppercase tracking-[0.22em] text-accent">Our approach</div>
-          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Built like a Big-4 practice. Sized for your business.</h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground">A senior-led engagement model that pairs technical depth with hands-on partnership — without the enterprise price tag.</p>
+          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">A structured process. A personal partnership.</h2>
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground">We combine disciplined methodology with dedicated attention — so every client gets senior-level expertise and clear, predictable outcomes.</p>
         </div>
         <div className="md:col-span-7">
           <ol className="space-y-px overflow-hidden rounded-2xl border border-border bg-border">
