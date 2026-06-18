@@ -58,10 +58,9 @@ function Hero() {
               Book a consultation
             </Link>
           </div>
-          <div className="mt-12 grid max-w-lg grid-cols-3 gap-6">
+          <div className="mt-12 grid max-w-sm grid-cols-2 gap-6">
             {[
               ["200+", "Clients served"],
-              ["9", "Service lines"],
               ["100%", "Compliance focus"],
             ].map(([n, l]) => (
               <div key={l}>
