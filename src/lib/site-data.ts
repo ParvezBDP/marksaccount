@@ -187,6 +187,42 @@ export const SERVICES: Service[] = [
 
 export const TESTIMONIALS = [
   {
+    name: "Pradip Bothra",
+    company: "M/S Pradip Cloth Store",
+    quote:
+      "Excellent accounting and taxation service. Professional, reliable, and always helpful.",
+  },
+  {
+    name: "Jamesbirth Marak",
+    company: "",
+    quote:
+      "Very satisfied with the service. Quick response and accurate work.",
+  },
+  {
+    name: "Sonia Danal Sangma",
+    company: "",
+    quote:
+      "Good support and professional guidance. Highly recommended.",
+  },
+  {
+    name: "Anup Jyoti Sharma",
+    company: "",
+    quote:
+      "Trustworthy service with timely completion of all work.",
+  },
+  {
+    name: "Jenia Marak",
+    company: "",
+    quote:
+      "Great experience. Helpful team and quality service.",
+  },
+  {
+    name: "Abhijit Kalita",
+    company: "Swastika Enterprise",
+    quote:
+      "Efficient and dependable service. Thank you for the excellent support.",
+  },
+  {
     name: "Aftaf Ali",
     company: "Lavish Fashion",
     quote:
