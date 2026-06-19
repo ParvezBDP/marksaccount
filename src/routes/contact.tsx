@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT } from "@/lib/site-data";
@@ -88,6 +88,9 @@ function ContactPage() {
               </a>
               <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
                 <Facebook className="h-4 w-4" /> Marks on Facebook
+              </a>
+              <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
+                <Linkedin className="h-4 w-4" /> Marks on LinkedIn
               </a>
               <p className="mt-3 text-xs text-muted-foreground">For updates, tips and behind-the-scenes from the team.</p>
             </div>

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, SERVICES } from "@/lib/site-data";
 import logoAsset from "@/assets/marks-logo.asset.json";
 
@@ -24,6 +24,9 @@ export function Footer() {
             </a>
             <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-background/80 hover:text-background">
               <Facebook className="h-4 w-4" /> Facebook
+            </a>
+            <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-background/80 hover:text-background">
+              <Linkedin className="h-4 w-4" /> LinkedIn
             </a>
           </div>
         </div>
