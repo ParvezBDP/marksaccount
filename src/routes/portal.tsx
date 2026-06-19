@@ -54,7 +54,7 @@ function PortalPage() {
 
             {submitted ? (
               <div className="mt-8 rounded-2xl border border-border bg-background p-6 text-sm text-foreground">
-                Thanks — if an account exists for that email, you'll receive sign-in instructions shortly. For urgent access, WhatsApp us at <a className="font-medium underline-offset-4 hover:underline" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">+91 91016 12613</a>.
+                Thanks — if an account exists for that email, you'll receive sign-in instructions shortly. For urgent access, WhatsApp us at <a className="font-medium underline-offset-4 hover:underline" href={CONTACT.whatsapp} target="_blank" rel="noreferrer">+91 97062 73154</a>.
               </div>
             ) : (
               <form
