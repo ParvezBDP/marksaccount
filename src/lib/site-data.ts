@@ -33,6 +33,28 @@ export const SERVICES: Service[] = [
     icon: "monitor",
   },
   {
+    slug: "company-registration",
+    title: "Company Registration",
+    tagline: "Incorporate the right way, from day one",
+    summary:
+      "End-to-end company formation and business registration in India — from name approval to incorporation and post-incorporation compliance.",
+    details: [
+      "Private Limited Company, LLP, OPC and Partnership Firm registration",
+      "Proprietorship firm and MSME / Udyam registration",
+      "DIN allotment, DSC procurement and Director KYC",
+      "Name reservation (RUN), MOA / AOA drafting and SPICe+ filing",
+      "PAN, TAN, bank account assistance and GST registration",
+      "Post-incorporation ROC compliance — AOC-4, MGT-7, DIR-3 KYC",
+    ],
+    deliverables: [
+      "Certificate of Incorporation",
+      "Company PAN & TAN",
+      "DIN, DSC and statutory registers",
+      "First-year compliance calendar",
+    ],
+    icon: "building",
+  },
+  {
     slug: "tan-application",
     title: "TAN Application",
     tagline: "Tax Deduction Account Number, hassle-free",
