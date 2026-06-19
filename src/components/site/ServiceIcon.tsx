@@ -1,4 +1,4 @@
-import { Book, Calculator, FileCheck, Globe, IdCard, Landmark, Monitor, Receipt, ShieldCheck } from "lucide-react";
+import { Book, Building2, Calculator, FileCheck, Globe, IdCard, Landmark, Monitor, Receipt, ShieldCheck } from "lucide-react";
 
 const MAP = {
   monitor: Monitor,
@@ -10,6 +10,7 @@ const MAP = {
   landmark: Landmark,
   globe: Globe,
   "shield-check": ShieldCheck,
+  building: Building2,
 } as const;
 
 export function ServiceIcon({ name, className }: { name: string; className?: string }) {
