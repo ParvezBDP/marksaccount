@@ -83,16 +83,18 @@ function ContactPage() {
             </div>
             <div className="rounded-3xl border border-border bg-background p-7">
               <div className="text-xs uppercase tracking-[0.22em] text-accent">Follow us</div>
-              <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
-                <Instagram className="h-4 w-4" /> @team_marks on Instagram
-              </a>
-              <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
-                <Facebook className="h-4 w-4" /> Marks on Facebook
-              </a>
-              <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
-                <Linkedin className="h-4 w-4" /> Marks on LinkedIn
-              </a>
-              <p className="mt-3 text-xs text-muted-foreground">For updates, tips and behind-the-scenes from the team.</p>
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+                <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
+                  <Instagram className="h-4 w-4" /> @team_marks
+                </a>
+                <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
+                  <Facebook className="h-4 w-4" /> Marks
+                </a>
+                <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
+                  <Linkedin className="h-4 w-4" /> Marks
+                </a>
+              </div>
+              <p className="mt-4 text-xs text-muted-foreground">For updates, tips and behind-the-scenes from the team.</p>
             </div>
           </aside>
         </div>
