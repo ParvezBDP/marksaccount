@@ -1,5 +1,5 @@
 export const CONTACT = {
-  phones: ["+91 91016 12613", "+91 93655 30440"],
+  phones: ["+91 91016 12613", "+91 97062 32819"],
   email: "teammarksacc@gmail.com",
   whatsapp: "https://wa.me/919706273154",
   address: "Tilapara, Opposite of Central Bank, Goalpara, Assam-783101, India",
