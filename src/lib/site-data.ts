@@ -4,6 +4,7 @@ export const CONTACT = {
   whatsapp: "https://wa.me/919101612613",
   address: "Tilapara, Opposite of Central Bank, Goalpara, Assam-783101, India",
   instagram: "https://www.instagram.com/team_marks/?hl=en",
+  facebook: "https://www.facebook.com/profile.php?id=61569245326616",
 };
 
 export type Service = {
