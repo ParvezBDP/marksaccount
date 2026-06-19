@@ -110,7 +110,7 @@ function ContactForm() {
 
       {sent ? (
         <div className="mt-8 rounded-2xl border border-accent/30 bg-accent/5 p-6 text-sm text-foreground">
-          Thank you — your message has been recorded. A member of our team will reach out within one business day. For urgent matters, please WhatsApp <a className="font-medium underline-offset-4 hover:underline" href={CONTACT.whatsapp}>+91 91016 12613</a>.
+          Thank you — your message has been recorded. A member of our team will reach out within one business day. For urgent matters, please WhatsApp <a className="font-medium underline-offset-4 hover:underline" href={CONTACT.whatsapp}>+91 97062 73154</a>.
         </div>
       ) : (
         <form
