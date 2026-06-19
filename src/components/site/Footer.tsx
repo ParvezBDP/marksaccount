@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, SERVICES } from "@/lib/site-data";
 import logoAsset from "@/assets/marks-logo.asset.json";
 
@@ -18,9 +18,14 @@ export function Footer() {
           <p className="mt-6 max-w-md text-sm leading-relaxed text-background/70">
             A trusted partner for accounting, taxation and compliance — serving entrepreneurs and enterprises across India with precision and care.
           </p>
-          <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-sm text-background/80 hover:text-background">
-            <Instagram className="h-4 w-4" /> @team_marks
-          </a>
+          <div className="mt-6 flex gap-4">
+            <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-background/80 hover:text-background">
+              <Instagram className="h-4 w-4" /> @team_marks
+            </a>
+            <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm text-background/80 hover:text-background">
+              <Facebook className="h-4 w-4" /> Facebook
+            </a>
+          </div>
         </div>
         <div className="md:col-span-4">
           <div className="text-xs uppercase tracking-[0.18em] text-background/50">Services</div>

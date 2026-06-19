@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT } from "@/lib/site-data";
@@ -86,6 +86,9 @@ function ContactPage() {
               <a href={CONTACT.instagram} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
                 <Instagram className="h-4 w-4" /> @team_marks on Instagram
               </a>
+              <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
+                <Facebook className="h-4 w-4" /> Marks on Facebook
+              </a>
               <p className="mt-3 text-xs text-muted-foreground">For updates, tips and behind-the-scenes from the team.</p>
             </div>
           </aside>
@@ -123,6 +126,7 @@ function ContactForm() {
             <span className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">Service of interest</span>
             <select name="service" className="mt-2 w-full rounded-md border border-input bg-background px-3.5 py-2.5 text-sm text-foreground focus:border-foreground focus:outline-none focus:ring-2 focus:ring-ring/30">
               <option>General enquiry</option>
+              <option>Company Registration</option>
               <option>GST Registration & Returns</option>
               <option>Income Tax Filing</option>
               <option>Bookkeeping & Accounting</option>
