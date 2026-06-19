@@ -182,7 +182,7 @@ function Testimonials() {
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground/90">"{t.quote}"</blockquote>
               <figcaption className="mt-6 border-t border-border pt-4">
                 <div className="text-sm font-semibold text-foreground">{t.name}</div>
-                <div className="text-xs text-muted-foreground">{t.company}</div>
+                {t.company && <div className="text-xs text-muted-foreground">{t.company}</div>}
               </figcaption>
             </figure>
           ))}
