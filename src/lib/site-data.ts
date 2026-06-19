@@ -5,6 +5,7 @@ export const CONTACT = {
   address: "Tilapara, Opposite of Central Bank, Goalpara, Assam-783101, India",
   instagram: "https://www.instagram.com/team_marks/?hl=en",
   facebook: "https://www.facebook.com/profile.php?id=61569245326616",
+  linkedin: "https://www.linkedin.com/in/marks-accounting-and-taxation-76983333b?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
 };
 
 export type Service = {
