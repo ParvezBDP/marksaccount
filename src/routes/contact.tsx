@@ -1,9 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useState } from "react";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { CONTACT } from "@/lib/site-data";
+import { submitContact } from "@/lib/contact.functions";
 import qrAsset from "@/assets/whatsapp-qr.asset.json";
 
 export const Route = createFileRoute("/contact")({
@@ -105,6 +107,26 @@ function ContactPage() {
 
 function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const submitFn = useServerFn(submitContact);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    setIsLoading(true);
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries()) as Record<string, string>;
+    try {
+      await submitFn({ data });
+      setSent(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-card)] md:p-10">
       <h2 className="font-display text-3xl text-foreground">Send a message</h2>
@@ -115,10 +137,12 @@ function ContactForm() {
           Thank you — your message has been recorded. A member of our team will reach out within one business day. For urgent matters, please WhatsApp <a className="font-medium underline-offset-4 hover:underline" href={CONTACT.whatsapp}>+91 97062 73154</a>.
         </div>
       ) : (
-        <form
-          onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-          className="mt-8 grid gap-5"
-        >
+        <form onSubmit={handleSubmit} className="mt-8 grid gap-5">
+          {error && (
+            <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-4 text-sm text-destructive">
+              {error}
+            </div>
+          )}
           <div className="grid gap-5 sm:grid-cols-2">
             <Field label="Full name" name="name" placeholder="Your name" required />
             <Field label="Business name" name="business" placeholder="Optional" />
@@ -153,8 +177,12 @@ function ContactForm() {
               required
             />
           </label>
-          <button type="submit" className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:w-auto">
-            Send message
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 disabled:opacity-60 sm:w-auto"
+          >
+            {isLoading ? "Sending..." : "Send message"}
           </button>
         </form>
       )}
