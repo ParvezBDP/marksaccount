@@ -139,6 +139,19 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 40s linear infinite;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
