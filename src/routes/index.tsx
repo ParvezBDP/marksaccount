@@ -168,45 +168,23 @@ function Approach() {
 }
 
 function Testimonials() {
-  const [page, setPage] = useState(0);
-  const pageCount = Math.ceil(TESTIMONIALS.length / 2);
-  const goPrev = () => setPage((p) => (p - 1 + pageCount) % pageCount);
-  const goNext = () => setPage((p) => (p + 1) % pageCount);
-  const current = TESTIMONIALS.slice(page * 2, page * 2 + 2);
+  const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
 
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <div className="text-xs uppercase tracking-[0.22em] text-accent">Clients</div>
-            <h2 className="mt-3 max-w-3xl font-display text-4xl leading-tight text-foreground md:text-5xl">Trusted by businesses across India</h2>
-          </div>
-          <div className="flex items-center gap-3">
-            <button
-              type="button"
-              onClick={goPrev}
-              aria-label="Previous reviews"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors hover:bg-muted"
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              onClick={goNext}
-              aria-label="Next reviews"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-background text-foreground transition-colors hover:bg-muted"
-            >
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
+        <div>
+          <div className="text-xs uppercase tracking-[0.22em] text-accent">Clients</div>
+          <h2 className="mt-3 max-w-3xl font-display text-4xl leading-tight text-foreground md:text-5xl">Trusted by businesses across India</h2>
         </div>
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {current.map((t) => (
-            <figure key={t.name} className="flex flex-col rounded-2xl border border-border bg-background p-7 shadow-[var(--shadow-card)]">
+      </div>
+      <div className="mt-14 relative overflow-hidden">
+        <div className="flex gap-6 w-max animate-marquee hover:[animation-play-state:paused]">
+          {doubled.map((t, i) => (
+            <figure key={`${t.name}-${i}`} className="w-[340px] md:w-[420px] flex-shrink-0 flex flex-col rounded-2xl border border-border bg-background p-7 shadow-[var(--shadow-card)]">
               <Quote className="h-6 w-6 text-accent" />
               <div className="mt-3 flex items-center gap-0.5 text-accent">
-                {Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}
+                {Array.from({ length: 5 }).map((_, si) => (<Star key={si} className="h-4 w-4 fill-current" />))}
               </div>
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-foreground/90">"{t.quote}"</blockquote>
               <figcaption className="mt-6 border-t border-border pt-4">
@@ -214,18 +192,6 @@ function Testimonials() {
                 {t.company && <div className="text-xs text-muted-foreground">{t.company}</div>}
               </figcaption>
             </figure>
-          ))}
-        </div>
-        <div className="mt-10 flex items-center justify-center gap-2">
-          {Array.from({ length: pageCount }).map((_, i) => (
-            <button
-              key={i}
-              type="button"
-              onClick={() => setPage(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={page === i}
-              className={`h-2 rounded-full transition-all ${page === i ? "w-8 bg-accent" : "w-2 bg-border hover:bg-muted-foreground/40"}`}
-            />
           ))}
         </div>
       </div>
