@@ -175,7 +175,13 @@ function Testimonials() {
       <div className="mx-auto max-w-7xl px-6">
         <div>
           <div className="text-xs uppercase tracking-[0.22em] text-accent">Clients</div>
-          <h2 className="mt-3 max-w-3xl font-display text-4xl leading-tight text-foreground md:text-5xl">Trusted by businesses across India</h2>
+          <div className="mt-3 flex flex-wrap items-center gap-4">
+            <h2 className="max-w-3xl font-display text-4xl leading-tight text-foreground md:text-5xl">Real words from real clients</h2>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-semibold text-accent">
+              <Star className="h-4 w-4 fill-current" />
+              5.0 rated
+            </span>
+          </div>
         </div>
       </div>
       <div className="mt-14 relative overflow-hidden">
