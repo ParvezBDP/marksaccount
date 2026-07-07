@@ -211,8 +211,8 @@ function QRBlock() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
         <div>
           <div className="text-xs uppercase tracking-[0.22em] text-accent">We're one message away</div>
-          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Scan to chat with us on WhatsApp</h2>
-          <p className="mt-5 max-w-md text-base text-muted-foreground">Point your phone camera at the QR code to start a conversation. We respond within business hours, every working day.</p>
+          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Prefer texting? So do we.</h2>
+          <p className="mt-5 max-w-md text-base text-muted-foreground">Scan. Chat. Get answers — usually within the hour. We reply fast. No bots, no delays.</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white hover:opacity-90">Chat on WhatsApp</a>
             <a href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-muted">Call {CONTACT.phones[0]}</a>
@@ -262,8 +262,8 @@ function CTABlock() {
     <section className="bg-brown-deep py-20 text-background">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 md:flex-row md:items-center">
         <div>
-          <h2 className="font-display text-3xl leading-tight md:text-4xl">Let's simplify your compliance — starting this quarter.</h2>
-          <p className="mt-3 max-w-xl text-background/70">A 20-minute call is all it takes to map your books, taxes and filings.</p>
+          <h2 className="font-display text-3xl leading-tight md:text-4xl">Your books deserve better. Let's fix that.</h2>
+          <p className="mt-3 max-w-xl text-background/70">20 minutes. We'll tell you exactly what you need.</p>
         </div>
         <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-background/90">
           <CheckCircle2 className="h-4 w-4" /> Schedule a consultation
