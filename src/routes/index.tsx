@@ -107,7 +107,7 @@ function ServicesGrid() {
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-accent">What we do</div>
-            <h2 className="mt-3 max-w-2xl font-display text-4xl leading-tight text-foreground md:text-5xl">A full spectrum of accounting & advisory services</h2>
+            <h2 className="mt-3 max-w-2xl font-display text-4xl leading-tight text-foreground md:text-5xl">Every service your business needs — under one roof</h2>
           </div>
           <Link to="/services" className="text-sm font-medium text-foreground underline-offset-4 hover:underline">All services →</Link>
         </div>
@@ -146,7 +146,7 @@ function Approach() {
       <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-12">
         <div className="md:col-span-5">
           <div className="text-xs uppercase tracking-[0.22em] text-accent">Our approach</div>
-          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">A structured process. A personal partnership.</h2>
+          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">How we work — no surprises, no delays</h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">We combine disciplined methodology with dedicated attention — so every client gets senior-level expertise and clear, predictable outcomes.</p>
         </div>
         <div className="md:col-span-7">
@@ -210,7 +210,7 @@ function QRBlock() {
     <section className="bg-beige-deep py-24 md:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
         <div>
-          <div className="text-xs uppercase tracking-[0.22em] text-accent">Connect instantly</div>
+          <div className="text-xs uppercase tracking-[0.22em] text-accent">We're one message away</div>
           <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Scan to chat with us on WhatsApp</h2>
           <p className="mt-5 max-w-md text-base text-muted-foreground">Point your phone camera at the QR code to start a conversation. We respond within business hours, every working day.</p>
           <div className="mt-7 flex flex-wrap gap-3">
@@ -236,7 +236,7 @@ function FAQ() {
       <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-12">
         <div className="md:col-span-4">
           <div className="text-xs uppercase tracking-[0.22em] text-accent">FAQ</div>
-          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Questions, answered.</h2>
+          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Things our clients asked before saying yes</h2>
           <p className="mt-5 text-muted-foreground">Can't find what you're looking for? <Link to="/contact" className="text-foreground underline-offset-4 hover:underline">Reach out →</Link></p>
         </div>
         <div className="md:col-span-8">
