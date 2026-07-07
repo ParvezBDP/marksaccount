@@ -41,7 +41,7 @@ function Hero() {
       <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-32">
         <div className="md:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Trusted since day one
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Where numbers meet trust
           </div>
           <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl">
             Precision in numbers.<br />
