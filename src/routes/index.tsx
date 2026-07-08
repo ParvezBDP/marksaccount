@@ -78,7 +78,7 @@ function TypewriterHeading() {
       {HERO_WORDS.slice(0, count).map((w, i) => (
         <span key={i} className={w.accent ? "text-accent" : undefined}>
           {w.text}
-          {w.breakAfter ? <br /> : i < count - 1 ? "\u00A0" : ""}
+          {w.breakAfter ? <br /> : i < count - 1 ? " " : ""}
         </span>
       ))}
     </>
