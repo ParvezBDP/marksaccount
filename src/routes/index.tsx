@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, CheckCircle2, Quote, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { ServiceIcon } from "@/components/site/ServiceIcon";
 import { CONTACT, FAQS, SERVICES, TESTIMONIALS } from "@/lib/site-data";
@@ -35,6 +36,57 @@ function Home() {
 
 function Hero() {
   return (
+    <HeroInner />
+  );
+}
+
+const HERO_WORDS: { text: string; accent?: boolean; breakAfter?: boolean }[] = [
+  { text: "Precision" },
+  { text: "in" },
+  { text: "numbers.", breakAfter: true },
+  { text: "Confidence", accent: true },
+  { text: "in" },
+  { text: "compliance." },
+];
+
+function TypewriterHeading() {
+  const [count, setCount] = useState(0);
+  const [phase, setPhase] = useState<"typing" | "pausing" | "erasing">("typing");
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    if (phase === "typing") {
+      if (count < HERO_WORDS.length) {
+        timer = setTimeout(() => setCount((c) => c + 1), 260);
+      } else {
+        timer = setTimeout(() => setPhase("pausing"), 0);
+      }
+    } else if (phase === "pausing") {
+      timer = setTimeout(() => setPhase("erasing"), 2000);
+    } else {
+      if (count > 0) {
+        timer = setTimeout(() => setCount((c) => c - 1), 140);
+      } else {
+        timer = setTimeout(() => setPhase("typing"), 300);
+      }
+    }
+    return () => clearTimeout(timer);
+  }, [count, phase]);
+
+  return (
+    <>
+      {HERO_WORDS.slice(0, count).map((w, i) => (
+        <span key={i} className={w.accent ? "text-accent" : undefined}>
+          {w.text}
+          {w.breakAfter ? <br /> : i < count - 1 ? "\u00A0" : ""}
+        </span>
+      ))}
+    </>
+  );
+}
+
+function HeroInner() {
+  return (
     <section className="relative overflow-hidden bg-beige">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(var(--brown-deep) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="pointer-events-none absolute -top-40 right-0 h-[480px] w-[480px] rounded-full bg-accent/15 blur-3xl" />
@@ -43,26 +95,8 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Where numbers meet trust
           </div>
-          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl">
-            {["Precision", "in", "numbers."].map((w, i) => (
-              <span key={`a-${i}`} className="inline-block animate-word-rise opacity-0" style={{ animationDelay: `${i * 0.1}s` }}>
-                {w}{i < 2 ? "\u00A0" : ""}
-              </span>
-            ))}
-            <br />
-            {[
-              { w: "Confidence", accent: true },
-              { w: "in", accent: false },
-              { w: "compliance.", accent: false },
-            ].map((t, i) => (
-              <span
-                key={`b-${i}`}
-                className={`inline-block animate-word-rise opacity-0 ${t.accent ? "text-accent" : ""}`}
-                style={{ animationDelay: `${(i + 3) * 0.1}s` }}
-              >
-                {t.w}{i < 2 ? "\u00A0" : ""}
-              </span>
-            ))}
+          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl min-h-[2.2em]">
+            <TypewriterHeading />
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Marks Accounting & Taxation is a full-service consulting firm helping entrepreneurs, SMEs and enterprises stay compliant, optimise tax and grow with clarity.
