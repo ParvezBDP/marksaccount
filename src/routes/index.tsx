@@ -44,26 +44,8 @@ function Hero() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Where numbers meet trust
           </div>
-          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl">
-            {["Precision", "in", "numbers."].map((w, i) => (
-              <span key={`a-${i}`} className="inline-block animate-word-rise opacity-0" style={{ animationDelay: `${i * 0.1}s` }}>
-                {w}{i < 2 ? "\u00A0" : ""}
-              </span>
-            ))}
-            <br />
-            {[
-              { w: "Confidence", accent: true },
-              { w: "in", accent: false },
-              { w: "compliance.", accent: false },
-            ].map((t, i) => (
-              <span
-                key={`b-${i}`}
-                className={`inline-block animate-word-rise opacity-0 ${t.accent ? "text-accent" : ""}`}
-                style={{ animationDelay: `${(i + 3) * 0.1}s` }}
-              >
-                {t.w}{i < 2 ? "\u00A0" : ""}
-              </span>
-            ))}
+          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl min-h-[2.2em]">
+            <TypewriterHeading />
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
             Marks Accounting & Taxation is a full-service consulting firm helping entrepreneurs, SMEs and enterprises stay compliant, optimise tax and grow with clarity.
