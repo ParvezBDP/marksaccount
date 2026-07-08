@@ -152,6 +152,21 @@
   animation: marquee-scroll 80s linear infinite;
 }
 
+@keyframes word-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-word-rise {
+  animation: word-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
