@@ -95,7 +95,10 @@ function HeroInner() {
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Where numbers meet trust
           </div>
-          <h1 className="mt-6 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[2.2em] break-words hyphens-auto">
+          <h1
+            className="mt-6 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[2.2em]"
+            style={{ hyphens: "none", overflowWrap: "normal", wordBreak: "normal" }}
+          >
             <TypewriterHeading />
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -109,15 +112,19 @@ function HeroInner() {
               Book a consultation
             </Link>
           </div>
-          <div className="mt-12 grid max-w-md grid-cols-3 gap-6">
+          <div className="mt-12 grid max-w-xl grid-cols-2 gap-6 sm:grid-cols-4">
             {[
-              ["200+", "Clients served"],
-              ["100%", "Compliance focus"],
-              ["10+", "Years in practice"],
-            ].map(([n, l]) => (
-              <div key={l}>
-                <div className="font-display text-3xl text-foreground">{n}</div>
-                <div className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">{l}</div>
+              { n: "200+", l: "Clients served" },
+              { n: "100%", l: "Compliance focus" },
+              { n: "10+", l: "Years in practice" },
+              { n: "5.0", l: "Client rating", star: true },
+            ].map((s) => (
+              <div key={s.l}>
+                <div className="flex items-center gap-1.5 font-display text-3xl text-foreground">
+                  {s.star && <Star className="h-5 w-5 fill-current text-accent" />}
+                  {s.n}
+                </div>
+                <div className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">{s.l}</div>
               </div>
             ))}
           </div>
@@ -125,13 +132,6 @@ function HeroInner() {
         <div className="relative md:col-span-5">
           <div className="relative mx-auto aspect-square max-w-md rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-luxe)]">
             <img src={logoAsset.url} alt="Marks Accounting & Taxation logo" className="h-full w-full object-contain" />
-          </div>
-          <div className="absolute -bottom-6 -left-2 hidden rounded-2xl border border-border bg-background p-5 shadow-[var(--shadow-card)] md:block">
-            <div className="flex items-center gap-1 text-accent">
-              {Array.from({ length: 5 }).map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}
-            </div>
-            <div className="mt-2 text-sm font-medium text-foreground">5.0 client rating</div>
-            <div className="text-xs text-muted-foreground">across verified reviews</div>
           </div>
         </div>
       </div>
