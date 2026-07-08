@@ -91,11 +91,11 @@ function HeroInner() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(var(--brown-deep) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="pointer-events-none absolute -top-40 right-0 h-[480px] w-[480px] rounded-full bg-accent/15 blur-3xl" />
       <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-32">
-        <div className="md:col-span-7">
+        <div className="min-w-0 md:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Where numbers meet trust
           </div>
-          <h1 className="mt-6 font-display text-5xl leading-[1.02] text-foreground md:text-7xl min-h-[2.2em]">
+          <h1 className="mt-6 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[2.2em] break-words hyphens-auto">
             <TypewriterHeading />
           </h1>
           <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
