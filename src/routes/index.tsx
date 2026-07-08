@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight, CheckCircle2, Quote, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { ServiceIcon } from "@/components/site/ServiceIcon";
 import { CONTACT, FAQS, SERVICES, TESTIMONIALS } from "@/lib/site-data";
