@@ -51,16 +51,16 @@ function ServiceDetail() {
           <Link to="/services" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground">
             <ArrowLeft className="h-4 w-4" /> All services
           </Link>
-          <div className="mt-8 flex items-start gap-6">
-            <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-background shadow-[var(--shadow-card)]">
-              <ServiceIcon name={service.icon} className="h-8 w-8 text-accent" />
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-6">
+            <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-background shadow-[var(--shadow-card)] sm:h-16 sm:w-16">
+              <ServiceIcon name={service.icon} className="h-7 w-7 text-accent sm:h-8 sm:w-8" />
             </div>
             <div className="min-w-0">
               <div className="text-xs uppercase tracking-[0.22em] text-accent">{service.tagline}</div>
-              <h1 className="mt-3 font-display text-4xl leading-[1.05] text-foreground md:text-6xl">{service.title}</h1>
+              <h1 className="mt-3 font-display text-3xl leading-[1.1] text-foreground sm:text-4xl md:text-6xl">{service.title}</h1>
             </div>
           </div>
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-muted-foreground">{service.summary}</p>
+          <p className="mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">{service.summary}</p>
         </div>
       </section>
 
