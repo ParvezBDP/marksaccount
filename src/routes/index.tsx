@@ -90,18 +90,18 @@ function HeroInner() {
     <section className="relative overflow-hidden bg-beige">
       <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{ backgroundImage: "radial-gradient(var(--brown-deep) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
       <div className="pointer-events-none absolute -top-40 right-0 h-[480px] w-[480px] rounded-full bg-accent/15 blur-3xl" />
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 py-24 md:grid-cols-12 md:py-32">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 sm:py-20 md:grid-cols-12 md:gap-14 md:py-32">
         <div className="min-w-0 md:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
             <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Where numbers meet trust
           </div>
           <h1
-            className="mt-6 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[2.2em]"
+            className="mt-6 font-display text-[2rem] leading-[1.08] text-foreground sm:text-5xl md:text-6xl lg:text-7xl min-h-[2.4em] sm:min-h-[2.2em]"
             style={{ hyphens: "none", overflowWrap: "normal", wordBreak: "normal" }}
           >
             <TypewriterHeading />
           </h1>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
             Marks Accounting & Taxation is a full-service consulting firm helping entrepreneurs, SMEs and enterprises stay compliant, optimise tax and grow with clarity.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
@@ -130,7 +130,7 @@ function HeroInner() {
           </div>
         </div>
         <div className="relative md:col-span-5">
-          <div className="relative mx-auto aspect-square max-w-md rounded-3xl border border-border bg-background p-8 shadow-[var(--shadow-luxe)]">
+          <div className="relative mx-auto aspect-square w-full max-w-xs rounded-3xl border border-border bg-background p-6 shadow-[var(--shadow-luxe)] sm:max-w-md sm:p-8">
             <img src={logoAsset.url} alt="Marks Accounting & Taxation logo" className="h-full w-full object-contain" />
           </div>
         </div>
@@ -162,7 +162,7 @@ function ServicesGrid() {
           </div>
           <Link to="/services" className="text-sm font-medium text-foreground underline-offset-4 hover:underline">All services →</Link>
         </div>
-        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-3">
+        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 md:grid-cols-3">
           {SERVICES.map((s) => (
             <Link
               key={s.slug}
@@ -259,10 +259,10 @@ function Testimonials() {
 function QRBlock() {
   return (
     <section className="bg-beige-deep py-24 md:py-28">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 md:grid-cols-2">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 sm:grid-cols-1 md:grid-cols-2">
         <div>
           <div className="text-xs uppercase tracking-[0.22em] text-accent">We're one message away</div>
-          <h2 className="mt-3 font-display text-4xl leading-tight text-foreground md:text-5xl">Prefer texting? So do we.</h2>
+          <h2 className="mt-3 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">Prefer texting? So do we.</h2>
           <p className="mt-5 max-w-md text-base text-muted-foreground">Scan. Chat. Get answers — usually within the hour. We reply fast. No bots, no delays.</p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white hover:opacity-90">Chat on WhatsApp</a>
@@ -272,7 +272,7 @@ function QRBlock() {
         </div>
         <div className="flex justify-center md:justify-end">
           <div className="rounded-3xl border border-border bg-background p-6 shadow-[var(--shadow-luxe)]">
-            <img src={qrAsset.url} alt="Scan to chat on WhatsApp" className="h-64 w-64 object-contain" />
+            <img src={qrAsset.url} alt="Scan to chat on WhatsApp" className="h-52 w-52 object-contain sm:h-64 sm:w-64" />
             <div className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">Scan with your camera</div>
           </div>
         </div>
