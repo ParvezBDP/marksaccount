@@ -1,4 +1,4 @@
-import { Bell, ArrowRight } from "lucide-react";
+import { Bell } from "lucide-react";
 
 export function TopAnnouncementBar() {
   return (
@@ -8,7 +8,6 @@ export function TopAnnouncementBar() {
         <span className="text-center text-xs font-medium leading-snug tracking-wide sm:text-sm">
           The last date for filing ITR-3 and ITR-4 for Assessment Year 2026–27 is <strong className="font-semibold text-amber-300">31 August 2026</strong>
         </span>
-        <ArrowRight className="hidden h-3.5 w-3.5 shrink-0 text-blue-200 sm:block" aria-hidden="true" />
       </div>
     </div>
   );
