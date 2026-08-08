@@ -63,7 +63,7 @@
 
 :root {
   --radius: 0.5rem;
-  /* Marks ACC — white, beige, dark brown */
+  /* MARKS ACC — white, beige, dark brown */
   --background: oklch(0.985 0.005 80);
   --foreground: oklch(0.25 0.03 50);
   --card: oklch(1 0 0);

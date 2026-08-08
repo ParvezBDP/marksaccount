@@ -53,7 +53,7 @@ export function Footer() {
       </div>
       <div className="border-t border-background/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-background/55 sm:flex-row">
-          <div>© {new Date().getFullYear()} Marks Accounting & Taxation. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} MARKS Accounting & Taxation. All rights reserved.</div>
           <div>Goalpara · Assam · India</div>
         </div>
       </div>

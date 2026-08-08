@@ -8,9 +8,9 @@ import { SERVICES } from "@/lib/site-data";
 export const Route = createFileRoute("/services/")({
   head: () => ({
     meta: [
-      { title: "Services — Marks Accounting & Taxation" },
-      { name: "description", content: "GST, Income Tax, Bookkeeping, TDS, IEC, Project Reports, Internal Control and more — explore the full suite of services from Marks." },
-      { property: "og:title", content: "Services — Marks Accounting & Taxation" },
+      { title: "Services — MARKS Accounting & Taxation" },
+      { name: "description", content: "GST, Income Tax, Bookkeeping, TDS, IEC, Project Reports, Internal Control and more — explore the full suite of services from MARKS." },
+      { property: "og:title", content: "Services — MARKS Accounting & Taxation" },
       { property: "og:description", content: "A full suite of accounting, taxation and compliance services for Indian businesses." },
     ],
   }),
