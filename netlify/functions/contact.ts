@@ -38,7 +38,7 @@ export const handler: Handler = async (event) => {
     return json(400, { error: "Invalid email address" });
   }
 
-  const subject = "New Contact Form Submission - Marks Accounting";
+  const subject = "New Contact Form Submission - MARKS Accounting";
   const html = `
     <div style="font-family:Arial,sans-serif;color:#111;line-height:1.55;max-width:640px">
       <h2 style="margin:0 0 16px">New Contact Form Submission</h2>
@@ -75,7 +75,7 @@ export const handler: Handler = async (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Marks Accounting <contact@marksaccounting.in>",
+        from: "MARKS Accounting <contact@marksaccounting.in>",
         to: ["contact@marksaccounting.in"],
         reply_to: email,
         subject,

@@ -6,9 +6,9 @@ import { PageHero } from "@/components/site/PageHero";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Marks Accounting & Taxation" },
-      { name: "description", content: "Learn about Marks Accounting & Taxation — a senior-led firm helping businesses with accounting, taxation and compliance from Goalpara, Assam." },
-      { property: "og:title", content: "About Marks Accounting & Taxation" },
+      { title: "About — MARKS Accounting & Taxation" },
+      { name: "description", content: "Learn about MARKS Accounting & Taxation — a senior-led firm helping businesses with accounting, taxation and compliance from Goalpara, Assam." },
+      { property: "og:title", content: "About MARKS Accounting & Taxation" },
       { property: "og:description", content: "Senior-led, technology-enabled accounting and taxation services for India's growing businesses." },
     ],
   }),
@@ -28,7 +28,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About"
         title={<>A modern accounting firm with <span className="text-accent">old-school</span> standards.</>}
-        lead="Marks Accounting & Taxation was founded with one belief — that small and mid-sized businesses deserve the same quality of financial advice that large corporations enjoy."
+        lead="MARKS Accounting & Taxation was founded with one belief — that small and mid-sized businesses deserve the same quality of financial advice that large corporations enjoy."
       />
       <section className="bg-background py-24 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-12">

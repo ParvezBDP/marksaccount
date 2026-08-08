@@ -17,7 +17,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-6">
         <Link to="/" className="flex min-w-0 items-center gap-3">
-          <img src={logoAsset.url} alt="Marks Accounting & Taxation" className="h-11 w-11 shrink-0 rounded-md object-contain" />
+          <img src={logoAsset.url} alt="MARKS Accounting & Taxation" className="h-11 w-11 shrink-0 rounded-md object-contain" />
           <div className="min-w-0 leading-tight">
             <div className="font-display text-xl tracking-tight text-foreground">MARKS</div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Accounting & Taxation</div>

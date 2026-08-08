@@ -10,9 +10,9 @@ import qrAsset from "@/assets/whatsapp-qr.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Marks Accounting & Taxation — Trusted Financial Partners" },
+      { title: "MARKS Accounting & Taxation — Trusted Financial Partners" },
       { name: "description", content: "Premium accounting, GST, income tax and compliance services for businesses across India. Based in Goalpara, Assam." },
-      { property: "og:title", content: "Marks Accounting & Taxation" },
+      { property: "og:title", content: "MARKS Accounting & Taxation" },
       { property: "og:description", content: "GST, Income Tax, Bookkeeping, TDS, IEC and project reports — handled end-to-end." },
     ],
   }),
@@ -102,7 +102,7 @@ function HeroInner() {
             <TypewriterHeading />
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:mt-7 sm:text-lg">
-            Marks Accounting & Taxation is a full-service consulting firm helping entrepreneurs, SMEs and enterprises stay compliant, optimise tax and grow with clarity.
+            MARKS Accounting & Taxation is a full-service consulting firm helping entrepreneurs, SMEs and enterprises stay compliant, optimise tax and grow with clarity.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Link to="/services" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90">
@@ -131,7 +131,7 @@ function HeroInner() {
         </div>
         <div className="relative md:col-span-5">
           <div className="relative mx-auto aspect-square w-full max-w-xs rounded-3xl border border-border bg-background p-6 shadow-[var(--shadow-luxe)] sm:max-w-md sm:p-8">
-            <img src={logoAsset.url} alt="Marks Accounting & Taxation logo" className="h-full w-full object-contain" />
+            <img src={logoAsset.url} alt="MARKS Accounting & Taxation logo" className="h-full w-full object-contain" />
           </div>
         </div>
       </div>

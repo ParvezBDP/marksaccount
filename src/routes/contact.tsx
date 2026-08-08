@@ -9,9 +9,9 @@ import qrAsset from "@/assets/whatsapp-qr.asset.json";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Marks Accounting & Taxation" },
-      { name: "description", content: "Get in touch with Marks Accounting & Taxation — call, email, WhatsApp or visit our Goalpara office." },
-      { property: "og:title", content: "Contact Marks Accounting & Taxation" },
+      { title: "Contact — MARKS Accounting & Taxation" },
+      { name: "description", content: "Get in touch with MARKS Accounting & Taxation — call, email, WhatsApp or visit our Goalpara office." },
+      { property: "og:title", content: "Contact MARKS Accounting & Taxation" },
       { property: "og:description", content: "Call, email, WhatsApp or visit us in Goalpara, Assam." },
     ],
   }),
@@ -88,10 +88,10 @@ function ContactPage() {
                   <Instagram className="h-4 w-4" /> @team_marks
                 </a>
                 <a href={CONTACT.facebook} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
-                  <Facebook className="h-4 w-4" /> Marks
+                  <Facebook className="h-4 w-4" /> MARKS
                 </a>
                 <a href={CONTACT.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent">
-                  <Linkedin className="h-4 w-4" /> Marks
+                  <Linkedin className="h-4 w-4" /> MARKS
                 </a>
               </div>
               <p className="mt-4 text-xs text-muted-foreground">For updates, tips and behind-the-scenes from the team.</p>
