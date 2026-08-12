@@ -41,6 +41,9 @@ export function Footer() {
               </li>
             ))}
           </ul>
+          <Link to="/resources" className="mt-5 inline-block text-sm text-background/75 underline-offset-4 hover:text-background hover:underline">
+            Downloads & forms →
+          </Link>
         </div>
         <div className="md:col-span-3">
           <div className="text-xs uppercase tracking-[0.18em] text-background/50">Contact</div>
