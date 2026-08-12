@@ -57,10 +57,11 @@ function Resources() {
                 <div className="mt-auto flex flex-wrap items-center gap-4 pt-2">
                   <a
                     href={d.url}
-                    download={d.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                   >
-                    <Download className="h-4 w-4" /> Download
+                    <Download className="h-4 w-4" /> Download PDF
                   </a>
                   <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">{d.meta}</span>
                 </div>
