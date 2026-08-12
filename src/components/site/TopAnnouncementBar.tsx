@@ -1,4 +1,5 @@
 import { Bell } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 export function TopAnnouncementBar() {
   return (
@@ -8,6 +9,9 @@ export function TopAnnouncementBar() {
         <span className="text-center text-xs font-medium leading-snug tracking-wide sm:text-sm">
           The last date for filing ITR-3 and ITR-4 for Assessment Year 2026–27 is <strong className="font-semibold text-amber-300">31 August 2026</strong>
         </span>
+        <Link to="/resources" className="hidden shrink-0 text-xs font-semibold text-amber-300 underline-offset-4 hover:underline sm:inline">
+          Download forms
+        </Link>
       </div>
     </div>
   );
