@@ -3,6 +3,8 @@ import { Download, FileText } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import itr3Form from "@/assets/itr3-form.pdf.asset.json";
+import itr3Rules from "@/assets/itr3-validation-rules.pdf.asset.json";
 
 export const Route = createFileRoute("/resources")({
   head: () => ({
@@ -23,17 +25,33 @@ const DOWNLOADS = [
     title: "ITR-3 Form — AY 2026-27",
     desc: "Official Income Tax Return Form ITR-3 for individuals and HUFs having income from business or profession.",
     meta: "PDF · 1.3 MB",
-    url: "/api/public/download?file=itr3-form",
+    url: itr3Form.url,
+    file: itr3Form.original_filename,
   },
   {
     title: "CBDT e-Filing ITR-3 Validation Rules V1.0 — AY 2026-27",
     desc: "Category-wise validation rules issued by CBDT for error-free e-filing of ITR-3 returns.",
     meta: "PDF · 1.1 MB",
-    url: "/api/public/download?file=itr3-validation-rules",
+    url: itr3Rules.url,
+    file: itr3Rules.original_filename,
   },
 ];
 
 function Resources() {
+  const downloadPdf = async (url: string, filename: string) => {
+    const response = await fetch(url);
+    if (!response.ok) return;
+
+    const blobUrl = URL.createObjectURL(await response.blob());
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    window.setTimeout(() => URL.revokeObjectURL(blobUrl), 1_000);
+  };
+
   return (
     <SiteLayout>
       <PageHero
@@ -53,9 +71,9 @@ function Resources() {
                 </div>
                 <div className="mt-auto flex flex-wrap items-center gap-4 pt-2">
                   <Button asChild className="rounded-full px-5 py-2.5">
-                    <a href={d.url}>
+                    <button type="button" onClick={() => void downloadPdf(d.url, d.file)}>
                       <Download className="h-4 w-4" /> Download PDF
-                    </a>
+                    </button>
                   </Button>
                   <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">{d.meta}</span>
                 </div>
