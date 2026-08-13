@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
 import { Download, FileText } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PageHero } from "@/components/site/PageHero";
@@ -38,8 +37,6 @@ const DOWNLOADS = [
 ];
 
 function Resources() {
-  const [origin, setOrigin] = useState("");
-  useEffect(() => setOrigin(window.location.origin), []);
   return (
     <SiteLayout>
       <PageHero
@@ -59,9 +56,7 @@ function Resources() {
                 </div>
                 <div className="mt-auto flex flex-wrap items-center gap-4 pt-2">
                   <a
-                    href={origin ? origin + d.url : d.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={d.url}
                     download={d.file}
                     className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                   >
