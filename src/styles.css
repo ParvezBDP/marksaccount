@@ -87,6 +87,8 @@
   --beige-deep: oklch(0.88 0.04 70);
   --brown-deep: oklch(0.22 0.035 50);
   --gold: oklch(0.7 0.1 60);
+  --emi-principal: oklch(0.76 0.11 68);
+  --emi-interest: oklch(0.9 0.025 78);
   --shadow-luxe: 0 30px 80px -30px oklch(0.25 0.03 50 / 0.25);
   --shadow-card: 0 1px 2px oklch(0.25 0.03 50 / 0.04), 0 8px 24px -12px oklch(0.25 0.03 50 / 0.08);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -137,6 +139,8 @@
   --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  --emi-principal: oklch(0.78 0.11 70);
+  --emi-interest: oklch(0.92 0.025 78);
 }
 
 @keyframes marquee-scroll {
@@ -177,4 +181,6 @@
   --color-beige-deep: var(--beige-deep);
   --color-brown-deep: var(--brown-deep);
   --color-gold: var(--gold);
+  --color-emi-principal: var(--emi-principal);
+  --color-emi-interest: var(--emi-interest);
 }

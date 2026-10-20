@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight, CheckCircle2, Quote, Star } from "lucide-react";
+import { ArrowUpRight, Calculator, CheckCircle2, Quote, Star } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { ServiceIcon } from "@/components/site/ServiceIcon";
 import { CONTACT, FAQS, SERVICES, TESTIMONIALS } from "@/lib/site-data";
+import { calculateEmi } from "@/lib/emi-calculator";
 import logoAsset from "@/assets/marks-logo.asset.json";
 import qrAsset from "@/assets/whatsapp-qr.asset.json";
 
@@ -14,6 +16,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Premium accounting, GST, income tax and compliance services for businesses across India. Based in Goalpara, Assam." },
       { property: "og:title", content: "MARKS Accounting & Taxation" },
       { property: "og:description", content: "GST, Income Tax, Bookkeeping, TDS, IEC and project reports — handled end-to-end." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: Home,
@@ -25,6 +29,7 @@ function Home() {
       <Hero />
       <TrustBar />
       <ServicesGrid />
+      <EMICalculator />
       <Approach />
       <Testimonials />
       <QRBlock />
@@ -180,6 +185,176 @@ function ServicesGrid() {
               </div>
             </Link>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function EMICalculator() {
+  const [loanAmount, setLoanAmount] = useState("2500000");
+  const [annualRate, setAnnualRate] = useState("8.5");
+  const [years, setYears] = useState("3");
+  const [months, setMonths] = useState("5");
+
+  const principal = Math.max(0, Number(loanAmount) || 0);
+  const rate = Math.max(0, Number(annualRate) || 0);
+  const tenureMonths = Math.max(0, Number(years) || 0) * 12 + Math.max(0, Number(months) || 0);
+  const { monthlyEmi, totalPayment, totalInterest } = calculateEmi(principal, rate, tenureMonths);
+  const formatRupees = (value: number) =>
+    new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
+    }).format(value);
+  const chartData = [
+    { name: "Principal amount", value: principal },
+    { name: "Interest amount", value: totalInterest },
+  ];
+
+  return (
+    <section className="bg-beige py-20 sm:py-24 md:py-28" aria-labelledby="emi-heading">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-10 flex flex-col gap-4 sm:mb-14 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-accent">
+              <Calculator className="h-4 w-4" /> Plan with clarity
+            </div>
+            <h2 id="emi-heading" className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
+              Know your numbers before you borrow.
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
+            Adjust the loan details to see your estimated monthly payment and total interest.
+          </p>
+        </div>
+
+        <div className="grid overflow-hidden rounded-xl border border-border bg-background md:grid-cols-[1.1fr_0.9fr]">
+          <div className="p-6 sm:p-9 md:p-11">
+            <div className="mb-7 flex items-center justify-between border-b border-border pb-4">
+              <h3 className="font-display text-xl text-foreground">Loan details</h3>
+              <span className="text-xs uppercase tracking-[0.16em] text-muted-foreground">INR · India</span>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2">
+              <label className="block sm:col-span-2">
+                <span className="mb-2 block text-sm font-medium text-foreground">Loan amount</span>
+                <span className="flex h-12 items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring">
+                  <span className="pl-4 text-sm text-muted-foreground">₹</span>
+                  <input
+                    aria-label="Loan amount in rupees"
+                    className="h-full min-w-0 flex-1 bg-transparent px-3 text-base text-foreground outline-none"
+                    type="number"
+                    min="0"
+                    step="10000"
+                    value={loanAmount}
+                    onChange={(event) => setLoanAmount(event.target.value)}
+                  />
+                </span>
+              </label>
+
+              <label className="block">
+                <span className="mb-2 block text-sm font-medium text-foreground">Rate of interest</span>
+                <span className="flex h-12 items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring">
+                  <input
+                    aria-label="Annual interest rate in percent"
+                    className="h-full min-w-0 flex-1 bg-transparent px-4 text-base text-foreground outline-none"
+                    type="number"
+                    min="0"
+                    step="0.1"
+                    value={annualRate}
+                    onChange={(event) => setAnnualRate(event.target.value)}
+                  />
+                  <span className="pr-4 text-sm text-muted-foreground">% p.a.</span>
+                </span>
+              </label>
+
+              <fieldset className="min-w-0">
+                <legend className="mb-2 text-sm font-medium text-foreground">Loan tenure</legend>
+                <div className="grid grid-cols-2 gap-2">
+                  <label className="flex h-12 min-w-0 items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring">
+                    <input
+                      aria-label="Loan tenure in years"
+                      className="h-full min-w-0 w-full bg-transparent px-3 text-base text-foreground outline-none"
+                      type="number"
+                      min="0"
+                      step="1"
+                      value={years}
+                      onChange={(event) => setYears(event.target.value)}
+                    />
+                    <span className="pr-3 text-sm text-muted-foreground">Yr</span>
+                  </label>
+                  <label className="flex h-12 min-w-0 items-center rounded-md border border-input bg-background focus-within:ring-2 focus-within:ring-ring">
+                    <input
+                      aria-label="Additional loan tenure in months"
+                      className="h-full min-w-0 w-full bg-transparent px-3 text-base text-foreground outline-none"
+                      type="number"
+                      min="0"
+                      step="1"
+                      value={months}
+                      onChange={(event) => setMonths(event.target.value)}
+                    />
+                    <span className="pr-3 text-sm text-muted-foreground">Mo</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div className="mt-8 flex items-center gap-3 border-t border-border pt-5 text-xs leading-relaxed text-muted-foreground">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-accent" />
+              Estimates use a fixed monthly rate; lender terms may vary.
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-between bg-brown-deep p-6 text-background sm:p-9 md:p-11">
+            <div>
+              <div className="text-xs uppercase tracking-[0.18em] text-background/70">Estimated monthly EMI</div>
+              <div className="mt-2 font-display text-4xl leading-tight text-background sm:text-5xl" aria-live="polite">
+                {tenureMonths > 0 ? formatRupees(monthlyEmi) : "—"}
+              </div>
+              <div className="mt-2 text-sm text-background/70">
+                {tenureMonths > 0 ? `${tenureMonths} monthly payments` : "Enter a tenure to view your estimate"}
+              </div>
+            </div>
+
+            <div className="mt-5 grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-2 sm:gap-4">
+              <div className="relative h-52 min-w-0 sm:h-60" role="img" aria-label="Pie chart comparing principal and interest amounts">
+                {tenureMonths > 0 && principal > 0 ? (
+                  <>
+                    <ResponsiveContainer width="100%" height="100%">
+                      <PieChart>
+                        <Pie data={chartData} dataKey="value" nameKey="name" innerRadius="66%" outerRadius="91%" paddingAngle={2} stroke="none">
+                          <Cell fill="var(--emi-principal)" />
+                          <Cell fill="var(--emi-interest)" />
+                        </Pie>
+                      </PieChart>
+                    </ResponsiveContainer>
+                    <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center text-center">
+                      <span className="text-[10px] uppercase tracking-[0.12em] text-background/65">Total repayment</span>
+                      <span className="mt-1 text-sm font-semibold text-background">{formatRupees(totalPayment)}</span>
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex h-full items-center justify-center text-center text-xs text-background/70">Your breakdown will appear here</div>
+                )}
+              </div>
+
+              <div className="min-w-0 space-y-4">
+                <div>
+                  <div className="flex items-center gap-2 text-xs text-background/75">
+                    <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emi-principal" /> Principal
+                  </div>
+                  <div className="mt-1 break-words text-sm font-medium text-background">{formatRupees(principal)}</div>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 text-xs text-background/75">
+                    <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emi-interest" /> Interest
+                  </div>
+                  <div className="mt-1 break-words text-sm font-medium text-background">{formatRupees(totalInterest)}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
