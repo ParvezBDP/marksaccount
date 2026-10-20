@@ -13,6 +13,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with MARKS Accounting & Taxation — call, email, WhatsApp or visit our Goalpara office." },
       { property: "og:title", content: "Contact MARKS Accounting & Taxation" },
       { property: "og:description", content: "Call, email, WhatsApp or visit us in Goalpara, Assam." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: ContactPage,

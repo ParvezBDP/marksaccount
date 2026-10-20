@@ -10,6 +10,8 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Learn about MARKS Accounting & Taxation — a senior-led firm helping businesses with accounting, taxation and compliance from Goalpara, Assam." },
       { property: "og:title", content: "About MARKS Accounting & Taxation" },
       { property: "og:description", content: "Senior-led, technology-enabled accounting and taxation services for India's growing businesses." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: AboutPage,

@@ -12,6 +12,8 @@ export const Route = createFileRoute("/services/")({
       { name: "description", content: "GST, Income Tax, Bookkeeping, TDS, IEC, Project Reports, Internal Control and more — explore the full suite of services from MARKS." },
       { property: "og:title", content: "Services — MARKS Accounting & Taxation" },
       { property: "og:description", content: "A full suite of accounting, taxation and compliance services for Indian businesses." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: ServicesPage,
