@@ -5,6 +5,7 @@ import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { ServiceIcon } from "@/components/site/ServiceIcon";
 import { CONTACT, FAQS, SERVICES, TESTIMONIALS } from "@/lib/site-data";
+import { calculateEmi } from "@/lib/emi-calculator";
 import logoAsset from "@/assets/marks-logo.asset.json";
 import qrAsset from "@/assets/whatsapp-qr.asset.json";
 
@@ -197,15 +198,7 @@ function EMICalculator() {
   const principal = Math.max(0, Number(loanAmount) || 0);
   const rate = Math.max(0, Number(annualRate) || 0);
   const tenureMonths = Math.max(0, Number(years) || 0) * 12 + Math.max(0, Number(months) || 0);
-  const monthlyRate = rate / 1200;
-  const emi = tenureMonths > 0
-    ? monthlyRate === 0
-      ? principal / tenureMonths
-      : (principal * monthlyRate * (1 + monthlyRate) ** tenureMonths) /
-        ((1 + monthlyRate) ** tenureMonths - 1)
-    : 0;
-  const totalPayment = emi * tenureMonths;
-  const totalInterest = Math.max(0, totalPayment - principal);
+  const { monthlyEmi, totalPayment, totalInterest } = calculateEmi(principal, rate, tenureMonths);
   const formatRupees = (value: number) =>
     new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -315,7 +308,7 @@ function EMICalculator() {
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-background/70">Estimated monthly EMI</div>
               <div className="mt-2 font-display text-4xl leading-tight text-background sm:text-5xl" aria-live="polite">
-                {tenureMonths > 0 ? formatRupees(emi) : "—"}
+                {tenureMonths > 0 ? formatRupees(monthlyEmi) : "—"}
               </div>
               <div className="mt-2 text-sm text-background/70">
                 {tenureMonths > 0 ? `${tenureMonths} monthly payments` : "Enter a tenure to view your estimate"}
