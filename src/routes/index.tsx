@@ -317,8 +317,8 @@ function EMICalculator() {
               </div>
             </div>
 
-            <div className="mt-5 grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] items-center gap-2 sm:gap-4">
-              <div className="relative h-52 min-w-0 sm:h-60" role="img" aria-label="Pie chart comparing principal and interest amounts">
+            <div className="mt-5 grid grid-cols-1 items-center gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] sm:gap-4">
+              <div className="relative mx-auto h-52 w-full max-w-[240px] min-w-0 sm:h-60 sm:max-w-none" role="img" aria-label="Pie chart comparing principal and interest amounts">
                 {tenureMonths > 0 && principal > 0 ? (
                   <>
                     <ResponsiveContainer width="100%" height="100%">
@@ -339,15 +339,15 @@ function EMICalculator() {
                 )}
               </div>
 
-              <div className="min-w-0 space-y-4">
+              <div className="min-w-0 space-y-4 text-center sm:text-left">
                 <div>
-                  <div className="flex items-center gap-2 text-xs text-background/75">
+                  <div className="flex items-center justify-center gap-2 text-xs text-background/75 sm:justify-start">
                     <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emi-principal" /> Principal
                   </div>
                   <div className="mt-1 break-words text-sm font-medium text-background">{formatRupees(principal)}</div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 text-xs text-background/75">
+                  <div className="flex items-center justify-center gap-2 text-xs text-background/75 sm:justify-start">
                     <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emi-interest" /> Interest
                   </div>
                   <div className="mt-1 break-words text-sm font-medium text-background">{formatRupees(totalInterest)}</div>
