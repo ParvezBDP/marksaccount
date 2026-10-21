@@ -341,13 +341,13 @@ function EMICalculator() {
 
               <div className="min-w-0 space-y-4 text-center sm:text-left">
                 <div>
-                  <div className="flex items-center gap-2 text-xs text-background/75">
+                  <div className="flex items-center justify-center gap-2 text-xs text-background/75 sm:justify-start">
                     <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emi-principal" /> Principal
                   </div>
                   <div className="mt-1 break-words text-sm font-medium text-background">{formatRupees(principal)}</div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 text-xs text-background/75">
+                  <div className="flex items-center justify-center gap-2 text-xs text-background/75 sm:justify-start">
                     <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emi-interest" /> Interest
                   </div>
                   <div className="mt-1 break-words text-sm font-medium text-background">{formatRupees(totalInterest)}</div>
