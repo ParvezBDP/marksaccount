@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-import { CONTACT, SERVICES } from "@/lib/site-data";
+import { CONTACT, HOME_FOOTER_SERVICES } from "@/lib/site-data";
 import logoAsset from "@/assets/marks-logo.asset.json";
 
 export function Footer() {
@@ -33,7 +33,7 @@ export function Footer() {
         <div className="md:col-span-4">
           <div className="text-xs uppercase tracking-[0.18em] text-background/50">Services</div>
           <ul className="mt-5 grid grid-cols-1 gap-2 text-sm">
-            {SERVICES.slice(0, 8).map((s) => (
+            {HOME_FOOTER_SERVICES.map((s) => (
               <li key={s.slug}>
                 <Link to="/services/$slug" params={{ slug: s.slug }} className="text-background/75 hover:text-background">
                   {s.title}

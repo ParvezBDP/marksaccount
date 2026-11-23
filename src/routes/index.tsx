@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { ServiceIcon } from "@/components/site/ServiceIcon";
-import { CONTACT, FAQS, SERVICES, TESTIMONIALS } from "@/lib/site-data";
+import { CONTACT, FAQS, HOME_FOOTER_SERVICES, TESTIMONIALS } from "@/lib/site-data";
 import { calculateEmi } from "@/lib/emi-calculator";
 import logoAsset from "@/assets/marks-logo.asset.json";
 import qrAsset from "@/assets/whatsapp-qr.asset.json";
@@ -117,6 +117,31 @@ function HeroInner() {
               Book a consultation
             </Link>
           </div>
+          <div className="mt-5 grid max-w-xl gap-3 sm:grid-cols-3">
+            {[
+              { label: "I need GST registration or returns", slug: "gst-registration-returns" },
+              { label: "I got a tax notice" },
+              { label: "I need a bank loan / project report", slug: "project-report" },
+            ].map((path) => {
+              const cardContent = (
+                <>
+                  <span>{path.label}</span>
+                  <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                </>
+              );
+              const className = "group flex min-h-20 items-start justify-between gap-2 rounded-md border border-border bg-background p-4 text-sm font-medium text-foreground transition-colors hover:bg-muted";
+
+              return path.slug ? (
+                <Link key={path.label} to="/services/$slug" params={{ slug: path.slug }} className={className}>
+                  {cardContent}
+                </Link>
+              ) : (
+                <Link key={path.label} to="/contact" className={className}>
+                  {cardContent}
+                </Link>
+              );
+            })}
+          </div>
           <div className="mt-12 grid max-w-xl grid-cols-2 gap-6 sm:grid-cols-4">
             {[
               { n: "200+", l: "Clients served" },
@@ -130,6 +155,15 @@ function HeroInner() {
                   {s.n}
                 </div>
                 <div className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">{s.l}</div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 grid max-w-xl gap-3 border-t border-border pt-5 sm:grid-cols-3">
+            <div className="text-xs uppercase tracking-[0.22em] text-accent sm:col-span-3">Why MARKS</div>
+            {["Dedicated point of contact", "Reply within the hour on WhatsApp", "Onboarding within 48 hours"].map((point) => (
+              <div key={point} className="flex items-start gap-2 text-xs leading-relaxed text-muted-foreground">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span>{point}</span>
               </div>
             ))}
           </div>
@@ -168,7 +202,7 @@ function ServicesGrid() {
           <Link to="/services" className="text-sm font-medium text-foreground underline-offset-4 hover:underline">All services →</Link>
         </div>
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 md:grid-cols-3">
-          {SERVICES.map((s) => (
+          {HOME_FOOTER_SERVICES.map((s) => (
             <Link
               key={s.slug}
               to="/services/$slug"
@@ -354,6 +388,16 @@ function EMICalculator() {
                 </div>
               </div>
             </div>
+            <div className="mt-6 border-t border-background/15 pt-5">
+              <p className="text-sm text-background/75">Need a project report or CMA data for this loan?</p>
+              <Link
+                to="/services/$slug"
+                params={{ slug: "project-report" }}
+                className="mt-3 inline-flex items-center gap-2 rounded-full bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-background/90"
+              >
+                Get it prepared <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -440,12 +484,12 @@ function QRBlock() {
           <h2 className="mt-3 font-display text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl">Prefer texting? So do we.</h2>
           <p className="mt-5 max-w-md text-base text-muted-foreground">Scan. Chat. Get answers — usually within the hour. We reply fast. No bots, no delays.</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white hover:opacity-90">Chat on WhatsApp</a>
+            <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-medium text-white hover:opacity-90 md:hidden">Chat on WhatsApp</a>
             <a href={`tel:${CONTACT.phones[0].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-muted">Call {CONTACT.phones[0]}</a>
             <a href={`tel:${CONTACT.phones[1].replace(/\s/g, "")}`} className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-muted">Call {CONTACT.phones[1]}</a>
           </div>
         </div>
-        <div className="flex justify-center md:justify-end">
+        <div className="hidden justify-center md:flex md:justify-end">
           <div className="rounded-3xl border border-border bg-background p-6 shadow-[var(--shadow-luxe)]">
             <img src={qrAsset.url} alt="Scan to chat on WhatsApp" className="h-52 w-52 object-contain sm:h-64 sm:w-64" />
             <div className="mt-3 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">Scan with your camera</div>
@@ -492,7 +536,7 @@ function CTABlock() {
           <p className="mt-3 max-w-xl text-background/70">20 minutes. We'll tell you exactly what you need.</p>
         </div>
         <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-background px-6 py-3 text-sm font-medium text-foreground hover:bg-background/90">
-          <CheckCircle2 className="h-4 w-4" /> Schedule a consultation
+          <CheckCircle2 className="h-4 w-4" /> Book a consultation
         </Link>
       </div>
     </section>

@@ -185,6 +185,22 @@ export const SERVICES: Service[] = [
   },
 ];
 
+export const HOME_FOOTER_SERVICES = [
+  "gst-registration-returns",
+  "income-tax-filing",
+  "bookkeeping-accounting",
+  "tds-compliance",
+  "project-report",
+  "company-registration",
+  "tan-application",
+  "iec-export",
+  "internal-control",
+  "digital-sewa",
+].flatMap((slug) => {
+  const service = SERVICES.find((item) => item.slug === slug);
+  return service ? [service] : [];
+});
+
 export const TESTIMONIALS = [
   {
     name: "Pradip Bothra",
