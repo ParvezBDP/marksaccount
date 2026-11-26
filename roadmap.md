@@ -7,4 +7,4 @@
 - [x] Make the homepage WhatsApp QR desktop-only with a mobile chat button.
 - [x] Preserve testimonial duplication required for the marquee and verify reviewer business names.
 - [x] Verify the preview and commit the changes.
-- [ ] Check build diagnostics when a preview build log is available; none was present during this continuation.
+- [x] Check build diagnostics; the available preview reports show successful builds.
